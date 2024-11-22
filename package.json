@@ -1,0 +1,74 @@
+{
+  "name": "python-dep-version",
+  "displayName": "python-dep-persion",
+  "description": "Show latest and local installed versions for Python Dependencies",
+  "version": "0.0.1",
+  "publisher": "wanghl",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "activationEvents": [
+    "workspaceContains:**/requirements*.txt",
+    "workspaceContains:**/pyproject.toml",
+    "workspaceContains:**/Pipfile"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "python-dep-version.refresh",
+        "title": "Refresh Python Dep Version Hints",
+        "category": "Python Dep Version"
+      },
+      {
+        "command": "python-dep-version.clearCache",
+        "title": "Clear Python Dependency Version Cache"
+      }
+    ],
+    "configuration": {
+      "title": "python-dep-version",
+      "properties": {
+        "python-dep-version.enableInlayHints": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable/disable inlay hints for python dep versions"
+        },
+        "python-dep-version.refreshDelay": {
+          "type": "number",
+          "default": 1000,
+          "description": "Delay in milliseconds before refreshing hints"
+        }
+      }
+    },
+    "languages": [
+      {
+        "id": "pipfile",
+        "extensions": [
+          ".Pipfile"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./"
+  },
+  "dependencies": {
+    "@iarna/toml": "^2.2.5",
+    "@vscode/python-extension": "^1.0.5"
+  },
+  "devDependencies": {
+    "@types/node": "^22.9.0",
+    "@types/vscode": "^1.80.0",
+    "typescript": "^5.6.3"
+  }
+}
