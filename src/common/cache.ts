@@ -13,7 +13,7 @@ interface CacheData {
 export class VersionCache {
   private static instance: VersionCache;
   private cache: CacheData = {};
-  private readonly TTL = 1000 * 60 * 30; // 30分钟缓存过期时间
+  private readonly TTL = 1000 * 60 * 5; // 5j分钟缓存过期时间
 
   private constructor() {}
 

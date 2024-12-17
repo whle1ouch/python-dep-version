@@ -1,19 +1,25 @@
 {
   "name": "python-dep-version",
-  "displayName": "python-dep-persion",
+  "displayName": "python-dep-version",
   "description": "Show latest and local installed versions for Python Dependencies",
   "version": "0.0.1",
   "publisher": "wanghl",
   "engines": {
     "vscode": "^1.80.0"
   },
+  "keywords": [
+    "python",
+    "dependency"
+  ],
   "categories": [
-    "Other"
+    "Other",
+    "Visualization"
   ],
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/whle1ouch/python-dep-version"
   },
+  "icon": "icon.png",
   "activationEvents": [
     "workspaceContains:**/requirements*.txt",
     "workspaceContains:**/pyproject.toml",
